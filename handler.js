@@ -25,12 +25,12 @@ module.exports = {
                 let user = global.db.data.users[m.sender]
                 if (typeof user !== 'object') global.db.data.users[m.sender] = {}
                 if (user) {
-                    if (!isNumber(user.healt)) user.healt = 100
+                    if (!isNumber(user.healt)) user.healt = 200
                     if (!isNumber(user.title)) user.title = 0
                     if (!isNumber(user.stamina)) user.stamina = 100
                     if (!isNumber(user.haus)) user.haus = 100
                     if (!isNumber(user.laper)) user.laper = 100
-                    if (!isNumber(user.level)) user.level = 0
+                    if (!isNumber(user.level)) user.level = 25
                     if (!('pasangan' in user)) user.pasangan = ''
                     if (!isNumber(user.exp)) user.exp = 0
                     if (!isNumber(user.pc)) user.pc = 0
@@ -42,7 +42,7 @@ module.exports = {
                     if (!isNumber(user.coin)) user.coin = 0
                     if (!isNumber(user.atm)) user.atm = 0
                     if (!isNumber(user.limit)) user.limit = 100
-                    if (!isNumber(user.glimit)) user.glimit = 20
+                    if (!isNumber(user.glimit)) user.glimit = 100
                     if (!isNumber(user.tprem)) user.tprem = 0
                     if (!isNumber(user.tigame)) user.tigame = 50
                     if (!isNumber(user.lastclaim)) user.lastclaim = 0
@@ -252,13 +252,13 @@ module.exports = {
                     if (!('autolevelup' in user)) user.autolevelup = true
                     if (!('lastIstigfar' in user)) user.lastIstigfar = true
                 } else global.db.data.users[m.sender] = {
-                    healt: 100,
+                    healt: 200,
                     title: '',
                     haus: 100,
                     laper: 100,
                     tprem: 0,
                     stamina : 100,
-                    level: 0,
+                    level: 25,
                     pasangan: '',
                     pc : 0,
                     exp: 0,
@@ -417,19 +417,19 @@ module.exports = {
                 if (chat) {
                     if (!('isBanned' in chat)) chat.isBanned = false
                     if (!('welcome' in chat)) chat.welcome = true
-                    if (!('detect' in chat)) chat.detect = false
+                    if (!('detect' in chat)) chat.detect = true
                     if (!('sWelcome' in chat)) chat.sWelcome = ''
                     if (!('sBye' in chat)) chat.sBye = ''
                     if (!('sPromote' in chat)) chat.sPromote = ''
                     if (!('sDemote' in chat)) chat.sDemote = ''
                     if (!('delete' in chat)) chat.delete = true
-                    if (!('antiLink' in chat)) chat.antiLink = true
+                    if (!('antiLink' in chat)) chat.antiLink = false
                     if (!('viewonce' in chat)) chat.viewonce = true
                     if (!('antiToxic' in chat)) chat.antiToxic = false
                 } else global.db.data.chats[m.chat] = {
                     isBanned: false,
                     welcome: true,
-                    detect: false,
+                    detect: true,
                     sWelcome: '',
                     sBye: '',
                     sPromote: '',
